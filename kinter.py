@@ -296,50 +296,50 @@ class Writer:
             file.write(filetext)
 
 
-root = tk.Tk()
-writer = Writer(root)
-root.configure(bg=pal.colors["temptress"])
-if os.name != "posix":
-    root.iconbitmap("icon.ico")
+if __name__ == "__main__":
 
+    root = tk.Tk()
+    writer = Writer(root)
+    root.configure(bg=pal.colors["temptress"])
+    if os.name != "posix":
+        root.iconbitmap("icon.ico")
 
-file_entry = tk.Entry(root, bg=pal.colors["temptress"], fg=pal.colors["wewak"])
-file_entry.grid(row=0, column=3)
+    file_entry = tk.Entry(root, bg=pal.colors["temptress"], fg=pal.colors["wewak"])
+    file_entry.grid(row=0, column=3)
 
-download_button = tk.Button(
-    root,
-    text="Download",
-    bg=pal.colors["temptress"],
-    fg=pal.colors["wewak"],
-    command=lambda: writer.savefile(file_entry.get(), text_entry.get("1.0", "end")),
-)
-download_button.grid(row=0, column=4)
+    download_button = tk.Button(
+        root,
+        text="Download",
+        bg=pal.colors["temptress"],
+        fg=pal.colors["wewak"],
+        command=lambda: writer.savefile(file_entry.get(), text_entry.get("1.0", "end")),
+    )
+    download_button.grid(row=0, column=4)
 
-text_entry: tk.Text = tk.Text(
-    root,
-    wrap=tk.WORD,
-    bg=pal.colors["temptress"],
-    fg=pal.colors["wewak"],
-)
-text_entry.grid(row=2, column=0, columnspan=6)
+    text_entry: tk.Text = tk.Text(
+        root,
+        wrap=tk.WORD,
+        bg=pal.colors["temptress"],
+        fg=pal.colors["wewak"],
+    )
+    text_entry.grid(row=2, column=0, columnspan=6)
 
-button_process = tk.Button(
-    root,
-    text="Process",
-    bg=pal.colors["temptress"],
-    fg=pal.colors["wewak"],
-    command=lambda: writer.typechars(text_entry.get("1.0", "end")),
-)
-button_process.grid(row=0, column=1)
+    button_process = tk.Button(
+        root,
+        text="Process",
+        bg=pal.colors["temptress"],
+        fg=pal.colors["wewak"],
+        command=lambda: writer.typechars(text_entry.get("1.0", "end")),
+    )
+    button_process.grid(row=0, column=1)
 
-button_generate_new = tk.Button(
-    root,
-    text="Generate Sheet",
-    bg=pal.colors["temptress"],
-    fg=pal.colors["wewak"],
-    command=writer.newpageblit,
-)
-button_generate_new.grid(row=0, column=2)
+    button_generate_new = tk.Button(
+        root,
+        text="Generate Sheet",
+        bg=pal.colors["temptress"],
+        fg=pal.colors["wewak"],
+        command=writer.newpageblit,
+    )
+    button_generate_new.grid(row=0, column=2)
 
-
-root.mainloop()
+    root.mainloop()
