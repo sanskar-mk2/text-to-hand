@@ -1,0 +1,16 @@
+Hello my name is Sanskar
+Generates a unique page everytime
+
+
+black==22.1.0
+click==8.0.4
+colorama==0.4.4
+mypy-extensions==0.4.3
+noise==1.2.2
+numpy==1.22.3
+pathspec==0.9.0
+Pillow==9.0.1
+platformdirs==2.5.1
+pypresence==4.2.1
+tomli==2.0.1
+
